@@ -1,3 +1,10 @@
+server:
+  port: 9504
+  
 spring:
   application:
     name: payment_service
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://${CONFIG_SERVER_HOST:localhost}:9296
